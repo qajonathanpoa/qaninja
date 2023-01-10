@@ -1,0 +1,36 @@
+---
+- title: login com sucesso
+  payload:
+    email: eshopmundial@gmail.com
+    password: '857224'
+  code: 200
+- title: senha invalida
+  payload:
+    email: eshopmundial@gmail.com
+    password: '857226'
+  code: 401
+  error: Unauthorized
+- title: senha em branco
+  payload:
+    email: eshopmundial@gmail.com
+    password: ''
+  code: 412
+  error: required password
+- title: usuario nao existe
+  payload:
+    email: malumodas@gmail.com
+    password: '857799'
+  code: 401
+  error: Unauthorized
+- title: email invalido
+  payload:
+    email: malumodas#gmail.com
+    password: '857799'
+  code: 412
+  error: wrong email
+- title: email nao informado
+  payload:
+    email: ''
+    password: '857799'
+  code: 412
+  error: required email

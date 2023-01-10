@@ -1,0 +1,18 @@
+---
+#Parametrizando a saída de relatórios no cucumber travando entre BDD ou HTML ao final 
+#do metodo default para escolher a saída
+default: --publish-quiet -p allure -p bdd -p local -p chrome
+bdd: -f pretty
+dots: -f progress
+#Caso queira gerar um relatório de execução em Html em minha máquina
+html: -f html -o logs/report.html
+allure: --format AllureCucumber::CucumberFormatter --out=logs
+local: CONFIG=local.yml
+hmg: CONFIG=hmg.yml
+
+#Criando os parametros para definir qual navegador utilizar nas variaveis de ambiente
+#utilizado o case para fazer a escolha do navegador
+firefox: BROWSER=firefox
+fire_headless: BROWSER=firefox_headless
+chrome: BROWSER=chrome
+chrome_headless: BROWSER=chrome_headless
